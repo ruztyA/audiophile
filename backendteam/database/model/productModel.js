@@ -22,10 +22,6 @@ const productSchema = new Schema({
     type: String,
     required: true,
   },
-  background: {
-    type: String,
-    required: true,
-  },
   flag_new: {
     type: String,
     required: true,
