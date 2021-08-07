@@ -1,6 +1,6 @@
 //! PRODUCT DETAIL CONTROLLER
 
-const mongoos = require("mongoose");
+const mongoose = require("mongoose");
 const productModel = require("../database/model/productModel");
 
 const getProduct_detail = async (req, res) => {
