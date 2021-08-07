@@ -16,6 +16,13 @@ server.use(
   })
 );
 
+const productDetailRouter = require("./routes/productDetailRoute");
+const productCategoriesRouter= require("./routes/productCategoriesRoute");
+
+server.use(bodyParser.json());
+server.use('/api/productDetail', productDetailRouter);  
+server.use('/api/productCategories', productCategoriesRouter);
+
 server.get("/", (req, res) => {
   res.send("Audiophile");
 });
