@@ -7,6 +7,8 @@ const server = express();
 const port = process.env.PORT || 3000;
 require("./database/config")();
 
+const categoryRoute = require("./routes/categoryRoute");
+
 server.use(logger("dev"));
 server.use(cors());
 server.use(express.json());
@@ -15,6 +17,8 @@ server.use(
     extended: false,
   })
 );
+
+server.use("/api", categoryRoute);
 
 server.get("/", (req, res) => {
   res.send("Audiophile");
