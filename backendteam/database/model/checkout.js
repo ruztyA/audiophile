@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
 const checkoutSchema = new Schema({
   customerId: {
