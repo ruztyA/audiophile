@@ -1,4 +1,3 @@
-require("dotenv").config();
 const mongoose = require("mongoose");
 
 const dbConnection = async () => {
@@ -7,12 +6,11 @@ const dbConnection = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("Database is Connected");
+
+    console.log("Database is Connected.");
   } catch (error) {
     console.log(error);
   }
 };
-
-dbConnection();
 
 module.exports = dbConnection;
