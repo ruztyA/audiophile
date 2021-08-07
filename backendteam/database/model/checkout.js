@@ -2,16 +2,16 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const checkoutSchema = new Schema({
-  customerId: {
+  customerId: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Customer',
     required: true,
-  },  
-  productId: {
+  }],  
+  productId: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Product',
     required: true,
-  },
+  }],
   quantity: {
     type: String,
     required: true,

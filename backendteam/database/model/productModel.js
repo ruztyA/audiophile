@@ -2,11 +2,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
-  category_id: {
+  category_id: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Category",
     required: true,
-  },
+  }],
   name: {
     type: String,
     required: true,
@@ -35,11 +35,11 @@ const productSchema = new Schema({
     type: String,
     required: true,
   },
-  bundle_id: {
+  bundle_id: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Bundle",
     required: true,
-  },
+  }],
   feature_image: {
     type: Array,
     required: true,
