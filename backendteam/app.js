@@ -2,10 +2,13 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const logger = require("morgan");
+const path = require('path')
 
 const server = express();
 const port = process.env.PORT || 3000;
 require("./database/config")();
+
+const categoryRoute = require("./routes/categoryRoute");
 
 server.use(logger("dev"));
 server.use(cors());
@@ -15,6 +18,9 @@ server.use(
     extended: false,
   })
 );
+server.use('/assets', express.static(path.join(__dirname, 'assets')))
+
+server.use("/api", categoryRoute);
 
 server.get("/", (req, res) => {
   res.send("Audiophile");
