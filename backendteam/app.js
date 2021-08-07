@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const logger = require("morgan");
+const path = require('path')
 
 const server = express();
 const port = process.env.PORT || 3000;
@@ -17,6 +18,7 @@ server.use(
     extended: false,
   })
 );
+server.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 server.use("/api", categoryRoute);
 
