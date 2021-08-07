@@ -13,4 +13,4 @@ const {
 route.get("/", getProduct_categories);
 route.get("/:id", getIdProduct_categories);
 
-moodule.exports = route;
+module.exports = route;

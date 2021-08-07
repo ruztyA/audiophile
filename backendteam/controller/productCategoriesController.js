@@ -1,9 +1,7 @@
 //! PRODUCT CATEGORIES CONTROLLER
 
 const mongoose = require("mongoose");
-const {
-  categoryModel,
-} = require("../../database/model/categoryModel");
+const categoryModel = require("../database/model/categoryModel");
 
 const getProduct_categories = async (req, res) => {
     try {
