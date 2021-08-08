@@ -20,7 +20,7 @@ server.use(
 );
 server.use('/assets', express.static(path.join(__dirname, 'assets')))
 
-server.use("/api", categoryRoute);
+server.use("/audiophile/api", categoryRoute);
 
 server.get("/", (req, res) => {
   res.send("Audiophile");
