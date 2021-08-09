@@ -9,6 +9,7 @@ const port = process.env.PORT || 3000;
 require("./database/config")();
 
 const categoryRoute = require("./routes/categoryRoute");
+const highlightBannerRoute = require("./routes/highlightBannerRoute");
 
 server.use(logger("dev"));
 server.use(cors());
@@ -21,6 +22,7 @@ server.use(
 server.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 server.use("/audiophile/api", categoryRoute);
+server.use("/audiophile/api", highlightBannerRoute);
 
 server.get("/", (req, res) => {
   res.send("Audiophile");
