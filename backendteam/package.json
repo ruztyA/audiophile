@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
+    "start": "nodemon app.js",
+=======
     "start": "node app.js",
+>>>>>>> 055aa2687db52f853d64080863ebe8ad048051fe
     "dev": "nodemon app.js"
   },
   "keywords": [],
