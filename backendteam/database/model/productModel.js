@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
   category_id: {
@@ -24,7 +24,7 @@ const productSchema = new Schema({
     required: true,
   },
   flag_new: {
-    type: String,
+    type: Boolean,
     required: true,
   },
   price: {
@@ -35,11 +35,11 @@ const productSchema = new Schema({
     type: String,
     required: true,
   },
-  bundle_id: {
+  bundle_id: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Bundle",
     required: true,
-  },
+  }],
   feature_image: {
     type: Array,
     required: true,
@@ -47,4 +47,6 @@ const productSchema = new Schema({
 });
 
 const Product = mongoose.model("Product", productSchema);
+
+
 module.exports = Product;

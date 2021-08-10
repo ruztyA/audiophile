@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const { Schema } = mongoose;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
 
 const categorySchema = new Schema({
   name: {
@@ -9,8 +9,9 @@ const categorySchema = new Schema({
   image: {
     type: String,
     required: true,
-  }
+  },
 });
 
 const Category = mongoose.model("Category", categorySchema);
+
 module.exports = Category;
