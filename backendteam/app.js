@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const logger = require("morgan");
+const bodyParser = require("body-parser");
 const path = require('path')
 
 const server = express();
@@ -21,6 +22,13 @@ server.use(
 server.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 server.use("/audiophile/api", categoryRoute);
+
+const productDetailRouter = require("./routes/productDetailRoute");
+const productCategoriesRouter= require("./routes/productCategoriesRoute");
+
+server.use(bodyParser.json());
+server.use('/api/productDetail', productDetailRouter);  
+server.use('/api/productCategories', productCategoriesRouter);
 
 server.get("/", (req, res) => {
   res.send("Audiophile");
