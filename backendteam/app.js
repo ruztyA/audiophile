@@ -10,6 +10,7 @@ const port = process.env.PORT || 3000;
 require("./database/config")();
 
 const categoryRoute = require("./routes/categoryRoute");
+const highlightBannerRoute = require("./routes/highlightBannerRoute");
 const productDetailRouter = require("./routes/productDetailRoute");
 const productCategoriesRouter= require("./routes/productCategoriesRoute");
 const checkoutRoute = require("./routes/checkoutRoute");
@@ -27,6 +28,7 @@ server.use(bodyParser.json());
 
 server.use('/assets', express.static(path.join(__dirname, 'assets')))
 server.use("/audiophile/api", categoryRoute);
+server.use("/audiophile/api", highlightBannerRoute);
 server.use('/api/productDetail', productDetailRouter);  
 server.use('/api/productCategories', productCategoriesRouter);
 server.use("/api/checkout", checkoutRoute);
