@@ -1,20 +1,11 @@
-<<<<<<< HEAD
-const mongoose = require("mongoose");
-const { Schema } = mongoose;
-=======
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
->>>>>>> 055aa2687db52f853d64080863ebe8ad048051fe
 
 const customerSchema = new Schema({
   name: {
     type: String,
     required: true,
-<<<<<<< HEAD
   },
-=======
-  },  
->>>>>>> 055aa2687db52f853d64080863ebe8ad048051fe
   email: {
     type: String,
     required: true,
@@ -22,11 +13,7 @@ const customerSchema = new Schema({
   phone: {
     type: String,
     required: true,
-<<<<<<< HEAD
   },
-=======
-  },  
->>>>>>> 055aa2687db52f853d64080863ebe8ad048051fe
   address: {
     type: String,
     required: true,
@@ -34,11 +21,7 @@ const customerSchema = new Schema({
   zipcode: {
     type: String,
     required: true,
-<<<<<<< HEAD
   },
-=======
-  },  
->>>>>>> 055aa2687db52f853d64080863ebe8ad048051fe
   city: {
     type: String,
     required: true,
@@ -49,22 +32,6 @@ const customerSchema = new Schema({
   },
   paymentType: {
     type: String,
-<<<<<<< HEAD
-    enum: ["e-money", "cash-on-delivery"],
-    default: "cash-on-delivery",
-    required: true,
-  },
-  emoneyNumber: {
-    type: String,
-  },
-  emoneyPin: {
-    type: String,
-  },
-});
-
-const Customer = mongoose.model("Customer", customerSchema);
-module.exports = Customer;
-=======
     enum: ['e-money', 'cash-on-delivery'],
     required: true,
   },  
@@ -80,4 +47,3 @@ module.exports = Customer;
 
 const Customer = mongoose.model("Customer", customerSchema);
 module.exports = Customer;
->>>>>>> 055aa2687db52f853d64080863ebe8ad048051fe
