@@ -5,7 +5,7 @@ const customerSchema = new Schema({
   name: {
     type: String,
     required: true,
-  },  
+  },
   email: {
     type: String,
     required: true,
@@ -13,7 +13,7 @@ const customerSchema = new Schema({
   phone: {
     type: String,
     required: true,
-  },  
+  },
   address: {
     type: String,
     required: true,
@@ -21,7 +21,7 @@ const customerSchema = new Schema({
   zipcode: {
     type: String,
     required: true,
-  },  
+  },
   city: {
     type: String,
     required: true,
@@ -32,16 +32,15 @@ const customerSchema = new Schema({
   },
   paymentType: {
     type: String,
-    enum: ['e-money', 'cash-on-delivery'],
-    required: true,
-  },  
-  emoneyNumber: {
-    type: String,
+    enum: ["e-money", "cash-on-delivery"],
+    default: "cash-on-delivery",
     required: true,
   },
+  emoneyNumber: {
+    type: String
+  },
   emoneyPin: {
-    type: String,
-    required: true,
+    type: String
   }
 });
 

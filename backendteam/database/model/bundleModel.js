@@ -9,11 +9,8 @@ const bundleSchema = new Schema({
   quantity: {
     type: String,
     required: true,
-  },
-})
+  }
+});
 
 const Bundle = mongoose.model("Bundle", bundleSchema);
-
 module.exports = Bundle;
-
-
