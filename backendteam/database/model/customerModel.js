@@ -32,16 +32,15 @@ const customerSchema = new Schema({
   },
   paymentType: {
     type: String,
-    enum: ['e-money', 'cash-on-delivery'],
-    required: true,
-  },  
-  emoneyNumber: {
-    type: String,
+    enum: ["e-money", "cash-on-delivery"],
+    default: "cash-on-delivery",
     required: true,
   },
+  emoneyNumber: {
+    type: String
+  },
   emoneyPin: {
-    type: String,
-    required: true,
+    type: String
   }
 });
 
